@@ -4,57 +4,52 @@ Py-template built using uv, which is an extremely fast Python package and projec
 
 ## Dependencies
 
-Uv is a single command line executable. There are a number of ways to install it, but the easiest is to use the provided installation script:
+uv is a single command line executable. There are a number of ways to install it, but the easiest is to use the provided installation script:
 
-```<sh>
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-source $HOME/.local/bin/env
+```<Powershell>
+# probably it is needed to deactivate Windows Defender or antivirus
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+$env:Path = "C:\Users\your_user\.local\bin;$env:Path"
 ```
 
-You can add dependencies to your `pyproject.toml` with the uv add command. 
-
+uv commands
 ```console
-# Specify a version constraint
+# Create a .venv with uv
+## modify pyproject.toml as needed
+uv run
+
+# Update the project’s environment
+uv sync 
+
+# Update the project’s lockfile
+uv lock
+
+# Add dependencies to your `pyproject.toml` with the uv add command. 
 uv add 'requests==2.31.0'
+uv add make
 
 # Add a git dependency
 uv add git+https://github.com/psf/requests
-```
 
-To remove a package, you can use uv remove:
-
-```console
+# To remove a package, you can use uv remove:
 uv remove requests
 ```
 
-## How to use it?
-
-You can execute your scripts using `uv run`:
-
+How to use uv to execute your script?
 ```console
-$ uv run project-template/hello.py 
+$ uv run src\services\hello_world_service.py 
 Hello world
 ```
 
-## Using Makefile for Common Tasks
+## Using Ruff and MyPy
 
-This project includes a Makefile to automate common tasks like linting, type checking, and running the application. You can execute the following commands with make:
-
-### Install dependencies and create a virtual environment:
-
+Ruff is already in pyproject.toml
 ```console
-$ make install
+ruff check                          # Lint all files in the current directory (and any subdirectories).
+ruff check path/to/code/            # Lint all files in `/path/to/code` (and any subdirectories).
+ruff check path/to/code/*.py        # Lint all `.py` files in `/path/to/code`.
+ruff check path/to/code/to/file.py  # Lint `file.py`.
+ruff check @arguments.txt           # Lint using an input file, treating its contents as newline-delimited command-line arguments.
 ```
-### Run linting (Ruff) and type checking (MyPy):
+MyPy can be used as a VSCode extension
 
-```console
-$ make check
-```
-### Run the application after performing linting and type checking:
-
-```console
-$ make run
-```
-
-The make commands will ensure that the code follows best practices and is checked for errors before running.
