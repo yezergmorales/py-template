@@ -6,10 +6,18 @@ Py-template built using uv, which is an extremely fast Python package and projec
 
 uv is a single command line executable. There are a number of ways to install it, but the easiest is to use the provided installation script:
 
-```<Powershell>
+Windows
+```console
+<Powershell>
 # probably it is needed to deactivate Windows Defender or antivirus
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 $env:Path = "C:\Users\your_user\.local\bin;$env:Path"
+```
+
+Macos
+```console
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.local/bin/env
 ```
 
 uv commands
@@ -20,9 +28,6 @@ uv run
 
 # Update the project’s environment
 uv sync 
-
-# Update the project’s lockfile
-uv lock
 
 # Add dependencies to your `pyproject.toml` with the uv add command. 
 uv add 'requests==2.31.0'
@@ -52,4 +57,12 @@ ruff check path/to/code/to/file.py  # Lint `file.py`.
 ruff check @arguments.txt           # Lint using an input file, treating its contents as newline-delimited command-line arguments.
 ```
 MyPy can be used as a VSCode extension
+
+## Tests
+
+Run the tests in cmd
+```console
+pytest tests/
+```
+
 
