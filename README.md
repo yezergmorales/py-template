@@ -6,16 +6,13 @@ Py-template built using uv, which is an extremely fast Python package and projec
 
 uv is a single command line executable. There are a number of ways to install it, but the easiest is to use the provided installation script:
 
-Windows
 ```console
-<Powershell>
+# Windows
 # probably it is needed to deactivate Windows Defender or antivirus
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 $env:Path = "C:\Users\your_user\.local\bin;$env:Path"
-```
 
-Macos
-```console
+# MacOS
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
 ```
@@ -23,7 +20,7 @@ source $HOME/.local/bin/env
 uv commands
 ```console
 # Create a .venv with uv
-## modify pyproject.toml as needed
+# modify pyproject.toml whether is needed
 uv run
 
 # Update the project’s environment
