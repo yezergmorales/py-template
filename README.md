@@ -39,7 +39,7 @@ uv remove requests
 
 How to use uv to execute your script?
 ```console
-$ uv run src\services\hello_world_service.py 
+$ uv run src\my_package\main.py 
 Hello world
 ```
 
