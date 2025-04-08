@@ -4,6 +4,7 @@ Py-template built using uv, which is an extremely fast Python package and projec
 
 ## Dependencies
 
+uv installation
 uv is a single command line executable. There are a number of ways to install it, but the easiest is to use the provided installation script:
 
 ```console
