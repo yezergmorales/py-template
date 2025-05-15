@@ -22,7 +22,7 @@ uv commands
 ```console
 # Create a .venv with uv
 # modify pyproject.toml whether is needed
-uv run
+uv sync
 
 # Update the project’s environment
 uv sync 
