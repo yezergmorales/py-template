@@ -13,7 +13,7 @@ uv is a single command line executable. There are a number of ways to install it
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 $env:Path = "C:\Users\your_user\.local\bin;$env:Path"
 
-# MacOS
+# MacOS & Linux
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
 ```
