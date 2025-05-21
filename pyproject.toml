@@ -14,6 +14,7 @@ dependencies = [
     "ruff>=0.8.6",
 ]
 
+# Remove it if it is not needed or if you don't have an entry point
 [project.scripts]
 "app" = "project_template:main" #TODO: Update to the project name
 
